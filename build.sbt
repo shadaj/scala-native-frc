@@ -41,7 +41,7 @@ val crossCompileSettings = if (true) {
             val targetopt = Seq("-target", target)
             val flags     = Seq("-o", outpath.abs) ++ linkopts// ++ targetopt
                                                                 // statically link libunwind
-            val opaths    = (nativelib ** "*.o").get.map(_.abs) :+ (libunwindFolder / "lib" / "libunwind.a").abs :+ (libunwindFolder / "lib" / "libunwind-arm.a").abs// :+ (librtFolder / "lib" / "libre2.a").abs
+            val opaths    = (nativelib ** "*.o").get.map(_.abs) :+ (libunwindFolder / "lib" / "libunwind.a").abs :+ (libunwindFolder / "lib" / "libunwind-arm.a").abs :+ (librtFolder / "lib" / "libre2.a").abs
             val paths     = apppaths.map(_.abs) ++ opaths
             val compile   = clangpp.abs +: (flags ++ paths)
 
