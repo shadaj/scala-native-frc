@@ -1,12 +1,11 @@
 package hello
 
-object Hello {
-  def foo(int: Int): Unit = {
-    println(int >>> (-13))
-    println(int >>> (32 -13))
-  }
+case class Bar(a: Int, b: Int)
 
+object Hello {
   def main(args: Array[String]): Unit = {
-    foo(0xffffff)
+    println(Bar(1, 4).hashCode())
+    println(Bar(5, 7).hashCode())
+    println(Bar(10, 11).hashCode())
   }
 }
